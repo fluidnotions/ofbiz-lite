@@ -12,5 +12,7 @@
 	</parent>
 	<modules>
         <module>webapp</module>
+        <module>base</module>
 	</modules>
 </project>
+

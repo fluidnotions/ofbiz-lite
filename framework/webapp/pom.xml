@@ -16,54 +16,72 @@
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
-    	<groupId>net.sf.datavision</groupId>
-    	<artifactId>DataVision</artifactId>
-    	<version>1.0.0</version>
+      <groupId>net.sf.datavision</groupId>
+      <artifactId>DataVision</artifactId>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
-    	<groupId>net.sf.ezmorph</groupId>
-    	<artifactId>ezmorph</artifactId>
-    	<version>0.9.1</version>
+      <groupId>net.sf.ezmorph</groupId>
+      <artifactId>ezmorph</artifactId>
+      <version>0.9.1</version>
     </dependency>
     <dependency>
-    	<groupId>com.lowagie</groupId>
-    	<artifactId>itext</artifactId>
-    	<version>2.1.7</version>
+      <groupId>com.lowagie</groupId>
+      <artifactId>itext</artifactId>
+      <version>2.1.7</version>
     </dependency>
     <dependency>
-    	<groupId>rome</groupId>
-    	<artifactId>rome</artifactId>
-    	<version>0.9</version>
+      <groupId>rome</groupId>
+      <artifactId>rome</artifactId>
+      <version>0.9</version>
     </dependency>
     <dependency>
-    	<groupId>org.apache.velocity</groupId>
-    	<artifactId>velocity</artifactId>
-    	<version>1.6.1</version>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.6.1</version>
     </dependency>
     <dependency>
-    	<groupId>net.sf.json-lib</groupId>
-    	<artifactId>json-lib</artifactId>
-    	<version>2.2.3</version>
-    	<classifier>jdk15</classifier>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>json-lib</artifactId>
+      <version>2.2.3</version>
+      <classifier>jdk15</classifier>
     </dependency>
   </dependencies>
   <build>
     <finalName>webapp</finalName>
     <plugins>
-    			<plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.5.1</version>
-	
-					
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
 
-						<configuration>
-							<outputDirectory>lib</outputDirectory>
-							<excludeTransitive>true</excludeTransitive>
-						</configuration>
 
-			</plugin>
-			</plugins>
+
+        <configuration>
+          <outputDirectory>lib</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+        </configuration>
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
-  
+
 </project>
