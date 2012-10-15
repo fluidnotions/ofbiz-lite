@@ -1,0 +1,949 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>framework</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>base</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId} OfBiz Component</name>
+  <url>http://maven.apache.org</url>
+  <modules>
+    <module>lib/commons</module>
+    <module>lib/ant</module>
+    <module>lib/j2eespecs</module>
+    <module>lib/scripting</module>
+  </modules>
+
+  
+   <repositories>
+    <repository>
+	<id>AntiSamy</id>
+	<name>AntiSamy</name>
+	<url>http://dist.wso2.org/maven2/</url>
+    </repository>
+    <repository>
+	<id>ForResolver</id>
+	<name>Resolver_id_of_artifact_needs_it</name>
+	<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads</url>
+    </repository>
+    <repository><id>parancoe-org-repository</id>
+	<name>Parancoe Repository for Maven</name>
+	<url>http://maven2.parancoe.org/repo</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>java-net-repository</id>
+	<name>java.net Repository for Maven</name>
+	<url>http://download.java.net/maven/2</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>modularity-releases</id>
+	<name>Modularity Releases Repository</name>
+	<url>http://m2.modularity.net.au/releases</url>
+	<releases>
+	  <enabled>true</enabled>
+	</releases>
+	<snapshots>
+	  <enabled>false</enabled>
+	  </snapshots>
+    </repository>
+    
+  </repositories>
+
+  <dependencies>
+	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpcore</artifactId>
+		<version>4.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.xmlgraphics</groupId>
+		<artifactId>fop</artifactId>
+		<version>1.0</version>
+	</dependency>
+	<!-- not available in standard maven repository
+	<dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<version>2.3.19-null-wildcards</version>
+	</dependency>
+	-->
+
+	<dependency>
+		<groupId>net.sourceforge.nekohtml</groupId>
+		<artifactId>nekohtml</artifactId>
+		<version>1.9.16</version>
+	</dependency>
+
+	<!-- not available in standard maven repository
+	<dependency>
+		<groupId>bsh-engine-modified</groupId>
+		<artifactId>bsh-engine-modified</artifactId>
+		<version>20121010-dps</version>
+	</dependency>
+	-->
+
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit-dep</artifactId>
+		<version>4.10</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.ws.commons</groupId>
+		<artifactId>ws-commons-java5</artifactId>
+		<version>1.0.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.ant</groupId>
+		<artifactId>ant-junit</artifactId>
+		<version>1.8.4</version>
+	</dependency>
+	<!-- not in official repo
+	<dependency>
+		<groupId>org.apache.xerces</groupId>
+		<artifactId>serializer</artifactId>
+		<version>2.9.1</version>
+	</dependency>
+	-->
+	<!-- not in official repo
+	<dependency>
+		<groupId>net.wimpi.pim</groupId>
+		<artifactId>jpim</artifactId>
+		<version>0.1</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId> org.apache.commons</groupId>
+		<artifactId>commons-compress</artifactId>
+		<version>1.4.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>xerces</groupId>
+		<artifactId>xercesImpl</artifactId>
+		<version>2.9.1</version>
+	</dependency>
+
+	<!-- in official repository is version 49.1 not 49_1
+	<dependency>
+		<groupId>com.ibm.icu</groupId>
+		<artifactId>icu4j</artifactId>
+		<version>49_1</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>avalon-util</groupId>
+		<artifactId>avalon-util-exception</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.xmlgraphics</groupId>
+		<artifactId>xmlgraphics-commons</artifactId>
+		<version>1.4</version>
+	</dependency>
+	<dependency>
+		<groupId>com.thoughtworks.xstream </groupId>
+		<artifactId>xstream</artifactId>
+		<version>1.3.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>1.4</version>
+	</dependency>
+
+
+	<dependency>
+		<groupId> org.apache.httpcomponents</groupId>
+		<artifactId>httpclient</artifactId>
+		<version>4.1.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>xalan</groupId>
+		<artifactId>xalan</artifactId>
+		<version>2.7.1</version>
+	</dependency>
+	<!-- not available in standard maven repository
+	<dependency>
+		<groupId>avalon-framework</groupId>
+		<artifactId>avalon-framework</artifactId>
+		<version>4.2.0</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient-cache</artifactId>
+		<version>4.1.1</version>
+	</dependency>
+	<!-- not available in official maven repository
+	<dependency>
+		<groupId>juel</groupId>
+		<artifactId>juel</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+	-->
+	<!-- not available in an official repository
+	<dependency>
+		<groupId>batik-all</groupId>
+		<artifactId>batik-all</artifactId>
+		<version>1.7</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>javolution</groupId>
+		<artifactId>javolution</artifactId>
+		<version>5.4.3</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.ant</groupId>
+		<artifactId>ant-launcher</artifactId>
+		<version>1.8.4</version>
+	</dependency>
+
+	<dependency>
+		<groupId> org.apache.ivy</groupId>
+		<artifactId>ivy</artifactId>
+		<version>2.2.0</version>
+	</dependency>
+
+	<!-- no in official repo
+	<dependency>
+		<groupId>clhm-release</groupId>
+		<artifactId>clhm-release</artifactId>
+		<version>1.0-lru</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>net.sf.barcode4j</groupId>
+		<artifactId>barcode4j-fop-ext-complete</artifactId>
+		<version>2.0</version>
+	</dependency>
+	<!-- no in official maven repository
+	<dependency>
+		<groupId>owasp-esapi-full-java</groupId>
+		<artifactId>owasp-esapi-full-java</artifactId>
+		<version>1.4</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>org.apache.xmlrpc</groupId>
+		<artifactId>xmlrpc-common</artifactId>
+		<version>3.1.2</version>
+	</dependency>
+	<!-- not avaliable in a standard maven repository
+	<dependency>
+		<groupId>apache-xerces</groupId>
+		<artifactId>xml-apis</artifactId>
+		<version>2.9.1</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>1.6.4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.xmlrpc</groupId>
+		<artifactId>xmlrpc-client</artifactId>
+		<version>3.1.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.xmlrpc</groupId>
+		<artifactId>xmlrpc-server</artifactId>
+		<version>3.1.2</version>
+	</dependency>
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.16</version>
+	</dependency>
+	<!-- not available in official maven repository
+	<dependency>
+		<groupId>jdbm</groupId>
+		<artifactId>jdbm</artifactId>
+		<version>1.0-20121010-dps</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>mx4j</groupId>
+		<artifactId>mx4j-remote</artifactId>
+		<version>3.0.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>antisamy</groupId>
+		<artifactId>antisamy-bin</artifactId>
+		<version>1.2</version>
+	</dependency>
+
+
+	<dependency>
+		<groupId>apache-xerces</groupId>
+		<artifactId>resolver</artifactId>
+		<version>2.9.1</version>
+	</dependency>
+
+
+
+	<dependency>
+		<groupId>net.fortuna.ical4j</groupId>
+		<artifactId>ical4j</artifactId>
+		<version>1.0-rc2</version>
+	</dependency>
+
+	<dependency>
+		<groupId>xml-apis</groupId>
+		<artifactId>xml-apis-ext</artifactId>
+		<version>1.3.04</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.ws.commons.util</groupId>
+		<artifactId>ws-commons-util</artifactId>
+		<version>1.0.2</version>
+	</dependency>
+
+	<dependency>
+		<groupId>httpunit</groupId>
+		<artifactId>httpunit</artifactId>
+		<version>1.7</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.ant</groupId>
+		<artifactId>ant</artifactId>
+		<version>1.8.4</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.jdom</groupId>
+		<artifactId>jdom</artifactId>
+		<version>1.1</version>
+	</dependency>
+	<dependency>
+		<groupId>mx4j</groupId>
+		<artifactId>mx4j</artifactId>
+		<version>3.0.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>net.jcip</groupId>
+		<artifactId>jcip-annotations</artifactId>
+		<version>1.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpmime</artifactId>
+		<version>4.1.1</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>1.6.4</version>
+	</dependency>
+
+	<dependency>
+		<groupId>xpp3</groupId>
+		<artifactId>xpp3_min</artifactId>
+		<version>1.1.4c</version>
+	</dependency>
+
+	<dependency>
+		<groupId>com.yahoo.platform.yui</groupId>
+		<artifactId>yuicompressor</artifactId>
+		<version>2.4.6</version>
+	</dependency>
+
+
+
+
+
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+
+
+
+        <configuration>
+          <outputDirectory>lib</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+
+          <!-- not accepts wildcards -->
+	  <!--
+          <excludeArtifactIds>commons-*</excludeArtifactIds>
+          <excludeArtifactIds>geronimo-*</excludeArtifactIds>
+          <excludeArtifactIds>bsh</excludeArtifactIds>
+          <excludeArtifactIds>jline</excludeArtifactIds>
+          <excludeArtifactIds>jansi</excludeArtifactIds>
+          <excludeArtifactIds>janino</excludeArtifactIds>
+          <excludeArtifactIds>bsf</excludeArtifactIds>
+          <excludeArtifactIds>antlr</excludeArtifactIds>
+          <excludeArtifactIds>asm-tree</excludeArtifactIds>
+          <excludeArtifactIds>asm-util</excludeArtifactIds>
+          <excludeArtifactIds>groovy-all</excludeArtifactIds>
+          <excludeArtifactIds>asm</excludeArtifactIds>
+          <excludeArtifactIds>asm-analysis</excludeArtifactIds>
+          -->
+          
+          <artifactItems>
+
+		<!-- Ant dependency location:framework/base/lib/httpcore-4.1.jar-->
+		<artifactItem>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/fop-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>fop</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/freemarker-2.3.19-null-wildcards.jar-->
+		<!-- not available in standard maven repository
+		<artifactItem>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.19-null-wildcards</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/nekohtml-1.9.16.jar-->
+		<artifactItem>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.16</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/bsh-engine-modified.jar-->
+		<!-- not available in standard maven repository
+		<artifactItem>
+			<groupId>bsh-engine-modified</groupId>
+			<artifactId>bsh-engine-modified</artifactId>
+			<version>20121010-dps</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/junit-dep-4.10.jar-->
+
+		<artifactItem>
+			<groupId>junit</groupId>
+			<artifactId>junit-dep</artifactId>
+			<version>4.10</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/ws-commons-java5-1.0.1.jar-->
+		<artifactItem>
+			<groupId>org.apache.ws.commons</groupId>
+			<artifactId>ws-commons-java5</artifactId>
+			<version>1.0.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/ant-junit-1.8.4.jar-->
+
+		<artifactItem>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-junit</artifactId>
+			<version>1.8.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/serializer-2.9.1.jar-->
+		<!-- not in an official repo
+		<artifactItem>
+			<groupId>org.apache.xerces</groupId>
+			<artifactId>serializer</artifactId>
+			<version>2.9.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/jpim-0.1.jar-->
+		<!-- not in official repo
+		<artifactItem>
+			<groupId>net.wimpi.pim</groupId>
+			<artifactId>jpim</artifactId>
+			<version>0.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/commons/commons-net-1.4.1.jar-->
+		
+		<!-- Ant dependency location:framework/base/lib/xercesImpl-2.9.1.jar-->
+		<artifactItem>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.9.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/icu4j-49_1.jar-->
+		<!-- in official repository is version 49.1 not 49_1
+		<artifactItem>
+			<groupId>com.ibm.icu</groupId>
+			<artifactId>icu4j</artifactId>
+			<version>49_1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/avalon-util-exception-1.0.0.jar-->
+		<artifactItem>
+			<groupId> avalon-util</groupId>
+			<artifactId>avalon-util-exception</artifactId>
+			<version>1.0.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/xmlgraphics-commons-1.4.jar-->
+		<artifactItem>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>xmlgraphics-commons</artifactId>
+			<version>1.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/xstream-1.3.1.jar-->
+		<artifactItem>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.3.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/mail-1.4.jar-->
+
+		<artifactItem>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/httpclient-4.1.1.jar-->
+		<artifactItem>
+			<groupId> org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.1.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/xalan-2.7.1.jar-->
+		<artifactItem>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/avalon-framework-4.2.0.jar-->
+		<!-- not available in standard maven repository
+		<artifactItem>
+			<groupId> avalon-framework</groupId>
+			<artifactId>avalon-framework</artifactId>
+			<version>4.2.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/httpclient-cache-4.1.1.jar-->
+		<artifactItem>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient-cache</artifactId>
+			<version>4.1.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/juel-2.2.1.jar-->
+
+		<artifactItem>
+			<groupId>juel</groupId>
+			<artifactId>juel</artifactId>
+			<version>2.2.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/batik-all-1.7.jar-->
+		<!-- not available in an official repository
+		<artifactItem>
+			<groupId>batik-all</groupId>
+			<artifactId>batik-all</artifactId>
+			<version>1.7</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/javolution-5.4.3.jar-->
+		<artifactItem>
+			<groupId>javolution</groupId>
+			<artifactId>javolution</artifactId>
+			<version>5.4.3</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/ant-launcher-1.8.4.jar-->
+		<artifactItem>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-launcher</artifactId>
+			<version>1.8.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/ivy-2.2.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.ivy</groupId>
+			<artifactId>ivy</artifactId>
+			<version>2.2.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/clhm-release-1.0-lru.jar-->
+		<!-- no in official repo
+		<artifactItem>
+			<groupId>clhm-release</groupId>
+			<artifactId>clhm-release</artifactId>
+			<version>1.0-lru</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/barcode4j-fop-ext-complete-2.0.jar-->
+		<artifactItem>
+			<groupId>net.sf.barcode4j</groupId>
+			<artifactId>barcode4j-fop-ext-complete</artifactId>
+			<version>2.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/owasp-esapi-full-java-1.4.jar-->
+		<!--not available in maven repository
+		<artifactItem>
+			<groupId>owasp-esapi-full-java</groupId>
+			<artifactId>owasp-esapi-full-java</artifactId>
+			<version>1.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/xmlrpc-common-3.1.2.jar-->
+		<artifactItem>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-common</artifactId>
+			<version>3.1.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/xml-apis-2.9.1.jar-->
+		<!-- another file is in official repository
+		<artifactItem>
+			<groupId>apache-xerces</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>2.9.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/slf4j-log4j12-1.6.4.jar-->
+		<artifactItem>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/xmlrpc-client-3.1.2.jar-->
+		<artifactItem>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-client</artifactId>
+			<version>3.1.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/xmlrpc-server-3.1.2.jar-->
+		<artifactItem>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-server</artifactId>
+			<version>3.1.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/log4j-1.2.16.jar-->
+		<artifactItem>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/jdbm-1.0-SNAPSHOT.jar-->
+		<!-- not available in official maven repository
+		<artifactItem>
+			<groupId>jdbm</groupId>
+			<artifactId>jdbm</artifactId>
+			<version>1.0-20121010-dps</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/mx4j-remote-3.0.1.jar-->
+		<artifactItem>
+			<groupId>mx4j</groupId>
+			<artifactId>mx4j-remote</artifactId>
+			<version>3.0.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/antisamy-bin.1.2.jar-->
+		<artifactItem>
+			<groupId>antisamy</groupId>
+			<artifactId>antisamy-bin</artifactId>
+			<version>1.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/resolver-2.9.1.jar-->
+
+		<artifactItem>
+			<groupId>apache-xerces</groupId>
+			<artifactId>resolver</artifactId>
+			<version>2.9.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		
+		<artifactItem>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/ical4j-1.0-rc2.jar-->
+
+		<artifactItem>
+			<groupId>net.fortuna.ical4j</groupId>
+			<artifactId>ical4j</artifactId>
+			<version>1.0-rc2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/xml-apis-ext-1.3.04.jar-->
+		<!-- another file is in official repository
+		<artifactItem>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis-ext</artifactId>
+			<version>1.3.04</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/ws-commons-util-1.0.2.jar-->
+
+		<artifactItem>
+		<groupId>org.apache.ws.commons.util</groupId>
+			<artifactId>ws-commons-util</artifactId>
+			<version>1.0.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/httpunit-1.7.jar-->
+		<artifactItem>
+			<groupId>httpunit</groupId>
+			<artifactId>httpunit</artifactId>
+			<version>1.7</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/ant-1.8.4.jar-->
+		<artifactItem>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>1.8.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/jdom-1.1.jar-->
+		<artifactItem>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/mx4j-3.0.1.jar-->
+		<artifactItem>
+			<groupId>mx4j</groupId>
+			<artifactId>mx4j</artifactId>
+			<version>3.0.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/jcip-annotations-1.0.jar-->
+		<artifactItem>
+			<groupId>net.jcip</groupId>
+			<artifactId>jcip-annotations</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/httpmime-4.1.1.jar-->
+		<artifactItem>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.1.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/slf4j-api-1.6.4.jar-->
+		<artifactItem>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/xpp3_min-1.1.4c.jar-->
+		<artifactItem>
+			<groupId>xpp3</groupId>
+			<artifactId>xpp3_min</artifactId>
+			<version>1.1.4c</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/yuicompressor-2.4.6.jar-->
+		<artifactItem>
+			<groupId>com.yahoo.platform.yui</groupId>
+			<artifactId>yuicompressor</artifactId>
+			<version>2.4.6</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/</outputDirectory>
+		</artifactItem>
+          </artifactItems>
+
+
+
+
+        </configuration>
+
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>ant/*.jar</include>
+                <include>commons/*.jar</include>
+                <include>j2eespecs/*.jar</include>
+                <include>scripting/*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+                <exclude>**/bsf*</exclude>
+                <exclude>**/bsh*</exclude>
+                <exclude>**/asm*</exclude>
+                <exclude>**/annotations-api-3.0.jar</exclude>
+                <exclude>**/jython-nooro.jar</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

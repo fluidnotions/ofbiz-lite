@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>applications</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>content</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId} OfBiz Component</name>
+  <url>http://maven.apache.org</url>
+    
+   <repositories>
+    <repository>
+	<id>AntiSamy</id>
+	<name>AntiSamy</name>
+	<url>http://dist.wso2.org/maven2/</url>
+    </repository>
+    <repository>
+	<id>ForResolver</id>
+	<name>Resolver_id_of_artifact_needs_it</name>
+	<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads</url>
+    </repository>
+    <repository><id>parancoe-org-repository</id>
+	<name>Parancoe Repository for Maven</name>
+	<url>http://maven2.parancoe.org/repo</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>java-net-repository</id>
+	<name>java.net Repository for Maven</name>
+	<url>http://download.java.net/maven/2</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>modularity-releases</id>
+	<name>Modularity Releases Repository</name>
+	<url>http://m2.modularity.net.au/releases</url>
+	<releases>
+	  <enabled>true</enabled>
+	</releases>
+	<snapshots>
+	  <enabled>false</enabled>
+	  </snapshots>
+    </repository>
+    
+  </repositories>
+  
+  <dependencies>
+        
+        <!-- not available in official maven repository
+        <dependency>
+            <groupId>poi-ooxml</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.8-20120326</version>
+        </dependency>
+        -->
+        <!-- not available in official maven repository
+        <dependency>
+            <groupId>poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.8-20120326</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parsers</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <!-- not available in official maven repository
+        <dependency>
+            <groupId>poi-scratchpad</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>3.8-20120326</version>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>fontbox</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <!-- not available in official maven repository
+        <dependency>
+            <groupId>poi-ooxml-schemas</groupId>
+            <artifactId>poi-ooxml-schemas</artifactId>
+            <version>3.8-20120326</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>jempbox</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+
+
+
+        <configuration>
+          <outputDirectory>lib</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+
+          <!-- not accepts wildcards -->
+
+          <excludeArtifactIds>commons-*</excludeArtifactIds>
+          <excludeArtifactIds>geronimo-*</excludeArtifactIds>
+          <artifactItems>
+                <!-- Ant dependency location:applications/content/lib/poi-ooxml-3.8-20120326.jar-->
+                <!-- not available in official maven repository
+                <artifactItem>
+                    <groupId>poi-ooxml</groupId>
+                    <artifactId>poi-ooxml</artifactId>
+                    <version>3.8-20120326</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+                -->
+                <!-- Ant dependency location:applications/content/lib/poi-3.8-20120326.jar-->
+                <!-- not available in official maven repository
+                <artifactItem>
+                    <groupId>poi</groupId>
+                    <artifactId>poi</artifactId>
+                    <version>3.8-20120326</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+                -->
+                <!-- Ant dependency location:applications/content/lib/dom4j-1.6.1.jar-->
+                <artifactItem>
+                    <groupId>dom4j</groupId>
+                    <artifactId>dom4j</artifactId>
+                    <version>1.6.1</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+                <!-- Ant dependency location:applications/content/lib/tika-core-1.0.jar-->
+                <artifactItem>
+                    <groupId>org.apache.tika</groupId>
+                    <artifactId>tika-core</artifactId>
+                    <version>1.0</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+                <!-- Ant dependency location:applications/content/lib/tika-parsers-1.0.jar-->
+
+                <artifactItem>
+                    <groupId>tika-parsers</groupId>
+                    <artifactId>tika-parsers</artifactId>
+                    <version>1.0</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+
+                <!-- Ant dependency location:applications/content/lib/pdfbox-1.4.0.jar-->
+
+                <artifactItem>
+                    <groupId>org.apache.pdfbox</groupId>
+                    <artifactId>pdfbox</artifactId>
+                    <version>1.4.0</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+
+                <!-- Ant dependency location:applications/content/lib/poi-scratchpad-3.8-20120326.jar-->
+                <!-- not available in official maven repository
+                <artifactItem>
+                    <groupId>poi-scratchpad</groupId>
+                    <artifactId>poi-scratchpad</artifactId>
+                    <version>3.8-20120326</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+                -->
+                <!-- Ant dependency location:applications/content/lib/fontbox-1.4.0.jar-->
+
+                <artifactItem>
+                    <groupId>org.apache.pdfbox</groupId>
+                    <artifactId>fontbox</artifactId>
+                    <version>1.4.0</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+
+                <!-- Ant dependency location:applications/content/lib/poi-ooxml-schemas-3.8-20120326.jar-->
+                <!-- not available in official maven repository
+                <artifactItem>
+                    <groupId>poi-ooxml-schemas</groupId>
+                    <artifactId>poi-ooxml-schemas</artifactId>
+                    <version>3.8-20120326</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+                -->
+                <!-- Ant dependency location:applications/content/lib/lucene-core-3.5.0.jar-->
+                <artifactItem>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-core</artifactId>
+                    <version>3.5.0</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+                <!-- Ant dependency location:applications/content/lib/jempbox-1.4.0.jar-->
+
+                <artifactItem>
+                    <groupId>org.apache.pdfbox</groupId>
+                    <artifactId>jempbox</artifactId>
+                    <version>1.4.0</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>applications/content/lib/</outputDirectory>
+                </artifactItem>
+
+          </artifactItems>
+
+
+
+
+        </configuration>
+
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>ant/*.jar</include>
+                <include>commons/*.jar</include>
+                <include>j2eespecs/*.jar</include>
+                <include>scripting/*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+                <exclude>**/bsf*</exclude>
+                <exclude>**/bsh*</exclude>
+                <exclude>**/asm*</exclude>
+                <exclude>**/annotations-api-3.0.jar</exclude>
+                <exclude>**/jython-nooro.jar</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

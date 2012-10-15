@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>framework</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>service</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId} OfBiz Component</name>
+  <url>http://maven.apache.org</url>
+
+  
+   <repositories>
+    <repository>
+	<id>AntiSamy</id>
+	<name>AntiSamy</name>
+	<url>http://dist.wso2.org/maven2/</url>
+    </repository>
+    <repository>
+	<id>ForResolver</id>
+	<name>Resolver_id_of_artifact_needs_it</name>
+	<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads</url>
+    </repository>
+    <repository><id>parancoe-org-repository</id>
+	<name>Parancoe Repository for Maven</name>
+	<url>http://maven2.parancoe.org/repo</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>java-net-repository</id>
+	<name>java.net Repository for Maven</name>
+	<url>http://download.java.net/maven/2</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>modularity-releases</id>
+	<name>Modularity Releases Repository</name>
+	<url>http://m2.modularity.net.au/releases</url>
+	<releases>
+	  <enabled>true</enabled>
+	</releases>
+	<snapshots>
+	  <enabled>false</enabled>
+	  </snapshots>
+    </repository>
+    
+  </repositories>
+  
+  <dependencies>
+
+
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-api</artifactId>
+            <version>1.2.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-http</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.axis</groupId>
+            <artifactId>axis-ant</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-kernel</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-impl</artifactId>
+            <version>1.2.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis</artifactId>
+            <version>1.4</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-local</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+            
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.neethi</groupId>
+            <artifactId>neethi</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+
+        <dependency>
+        <groupId>org.apache.ws.commons.schema</groupId>
+        <artifactId>XmlSchema</artifactId>
+        <version>1.4.3</version>
+        </dependency>
+
+
+
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+
+
+
+        <configuration>
+          <outputDirectory>lib</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+
+          <!-- not accepts wildcards -->
+
+          <excludeArtifactIds>commons-*</excludeArtifactIds>
+          <excludeArtifactIds>geronimo-*</excludeArtifactIds>
+          <artifactItems>
+
+            <!-- Ant dependency location:framework/service/lib/axiom-api-1.2.9.jar-->
+            <artifactItem>
+                <groupId>org.apache.ws.commons.axiom</groupId>
+                <artifactId>axiom-api</artifactId>
+                <version>1.2.9</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/axis2-transport-http-1.5.2.jar-->
+            <artifactItem>
+                <groupId>org.apache.axis2</groupId>
+                <artifactId>axis2-transport-http</artifactId>
+                <version>1.5.2</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/wsdl4j-1.6.2.jar-->
+            <artifactItem>
+                <groupId>wsdl4j</groupId>
+                <artifactId>wsdl4j</artifactId>
+                <version>1.6.2</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/axis-ant-1.4.jar-->
+
+            <artifactItem>
+                <groupId>org.apache.axis</groupId>
+                <artifactId>axis-ant</artifactId>
+                <version>1.4</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+
+            <!-- Ant dependency location:framework/service/lib/axis2-kernel-1.5.2.jar-->
+            <artifactItem>
+                <groupId>org.apache.axis2</groupId>
+                <artifactId>axis2-kernel</artifactId>
+                <version>1.5.2</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/axiom-impl-1.2.9.jar-->
+            <artifactItem>
+                <groupId>org.apache.ws.commons.axiom</groupId>
+                <artifactId>axiom-impl</artifactId>
+                <version>1.2.9</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/axis-1.4.jar-->
+            <artifactItem>
+                <groupId>axis</groupId>
+                <artifactId>axis</artifactId>
+                <version>1.4</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/axis2-transport-local-1.5.2.jar-->
+            <artifactItem>
+                <groupId>org.apache.axis2</groupId>
+                <artifactId>axis2-transport-local</artifactId>
+                <version>1.5.2</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/commons-httpclient-3.1.jar-->
+            <artifactItem>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>3.1</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/service/lib/neethi-2.0.4.jar-->
+
+            <artifactItem>
+                <groupId>org.apache.neethi</groupId>
+                <artifactId>neethi</artifactId>
+                <version>2.0.4</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+
+            <!-- Ant dependency location:framework/service/lib/XmlSchema-1.4.3.jar-->
+            <artifactItem>
+                <groupId>org.apache.ws.commons.schema</groupId>
+                <artifactId>XmlSchema</artifactId>
+                <version>1.4.3</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/service/lib/</outputDirectory>
+            </artifactItem>
+          </artifactItems>
+
+
+
+
+        </configuration>
+
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>ant/*.jar</include>
+                <include>commons/*.jar</include>
+                <include>j2eespecs/*.jar</include>
+                <include>scripting/*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+                <exclude>**/bsf*</exclude>
+                <exclude>**/bsh*</exclude>
+                <exclude>**/asm*</exclude>
+                <exclude>**/annotations-api-3.0.jar</exclude>
+                <exclude>**/jython-nooro.jar</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

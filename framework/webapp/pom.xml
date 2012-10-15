@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>framework</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>webapp</artifactId>
+  <packaging>war</packaging>
+  <name>webapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>2.1.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.datavision</groupId>
+            <artifactId>DataVision</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.2.3</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>net.sf.ezmorph</groupId>
+            <artifactId>ezmorph</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>rome</groupId>
+            <artifactId>rome</artifactId>
+            <version>0.9</version>
+        </dependency>
+        
+  </dependencies>
+  <build>
+    <finalName>webapp</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+        
+
+
+
+        <configuration>
+          <outputDirectory>lib</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+          
+         <artifactItems>
+            <!-- Ant dependency location:framework/webapp/lib/iText-2.1.7.jar-->
+            <artifactItem>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>2.1.7</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/webapp/lib/</outputDirectory>
+            </artifactItem>
+
+            <!-- Ant dependency location:framework/webapp/lib/DataVision-1.0.0.jar-->
+            <artifactItem>
+                <groupId>net.sf.datavision</groupId>
+                <artifactId>DataVision</artifactId>
+                <version>1.0.0</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/webapp/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/webapp/lib/json-lib-2.2.3-jdk15.jar-->
+            <artifactItem>
+                <groupId>net.sf.json-lib</groupId>
+                <artifactId>json-lib</artifactId>
+                <version>2.2.3</version>
+                <classifier>jdk15</classifier>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/webapp/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/webapp/lib/velocity-1.6.1.jar-->
+            <artifactItem>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>1.6.1</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/webapp/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/webapp/lib/ezmorph-0.9.1.jar-->
+            <artifactItem>
+                <groupId>net.sf.ezmorph</groupId>
+                <artifactId>ezmorph</artifactId>
+                <version>0.9.1</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/webapp/lib/</outputDirectory>
+            </artifactItem>
+            <!-- Ant dependency location:framework/webapp/lib/rome-0.9.jar-->
+            <artifactItem>
+                <groupId>rome</groupId>
+                <artifactId>rome</artifactId>
+                <version>0.9</version>
+                <type>jar</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>framework/webapp/lib/</outputDirectory>
+            </artifactItem>
+         </artifactItems>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
+
+
+

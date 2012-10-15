@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>base</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+     <relativePath>../..</relativePath>
+  </parent>
+  <artifactId>j2eespecs</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId} OfBiz Component</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-saaj_1.1_spec</artifactId>
+		<version>1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-activation_1.0.2_spec</artifactId>
+		<version>1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-jaxr_1.0_spec</artifactId>
+		<version>1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-jaxrpc_1.1_spec</artifactId>
+		<version>1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-j2ee-connector_1.5_spec</artifactId>
+		<version>1.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>javax.el</groupId>
+		<artifactId>el-api</artifactId>
+		<version>2.2</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-qname_1.1_spec</artifactId>
+		<version>1.0</version>
+	</dependency>
+	<!-- is in official maven repository, but doesn't work properly
+	<dependency>
+		<groupId> javax.annotation</groupId>
+		<artifactId>annotations-api</artifactId>
+		<version>3.0</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-jms_1.1_spec</artifactId>
+		<version>1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>2.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.geronimo.specs</groupId>
+		<artifactId>geronimo-jta_1.1_spec</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+	<!--  not available in standard maven repository
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.0</version>
+	</dependency>
+	-->
+
+	<!--  not available in standard maven repository
+	<dependency>
+		<groupId>org.hamcrest</groupId>
+		<artifactId>hamcrest-all</artifactId>
+		<version>1.2</version>
+	</dependency>
+	-->
+
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+
+
+
+        <configuration>
+          <outputDirectory>./</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+
+          <!-- not accepts wildcards -->
+
+          
+          <artifactItems>
+
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-saaj_1.1_spec-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.components</groupId>
+			<artifactId>geronimo-saaj_1.1_spec</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-activation_1.0.2_spec-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.components</groupId>
+			<artifactId>geronimo-activation</artifactId>
+			<version>1.0.2_spec-1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		
+		<!-- Ant dependency location:framework/base/lib/hamcrest-all-1.2.jar-->
+		
+		
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-jaxr_1.0_spec-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.components</groupId>
+			<artifactId>geronimo-jaxr_1.0_spec</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-jaxrpc_1.1_spec-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.components</groupId>
+			<artifactId>geronimo-jaxrpc_1.1_spec</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>base/lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		-->
+
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-j2ee-connector_1.5_spec-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-j2ee-connector_1.5_spec</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/el-api-2.2.jar-->
+		<artifactItem>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>base/lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-qname_1.1_spec-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-qname_1.1_spec</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>base/lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/annotations-api-3.0.jar-->
+		<!-- is in official maven repository, but doesn't work properly
+		<artifactItem>
+			<groupId>javax.annotation</groupId>
+			<artifactId>annotations-api</artifactId>
+			<version>3.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-jms_1.1_spec-1.0.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/jsp-api-2.2.jar-->
+		<artifactItem>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>base/lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/geronimo-jta_1.1_spec-1.1.1.jar-->
+		<artifactItem>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jta_1.1_spec</artifactId>
+			<version>1.1.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>base/lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/j2eespecs/servlet-api-3.0.jar-->
+		<!-- not available in standard maven repository
+		<artifactItem>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/j2eespecs/</outputDirectory>
+		</artifactItem>
+		-->
+
+          </artifactItems>
+
+
+
+
+        </configuration>
+
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>ant/*.jar</include>
+                <include>commons/*.jar</include>
+                <include>j2eespecs/*.jar</include>
+                <include>scripting/*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+                <exclude>**/bsf*</exclude>
+                <exclude>**/bsh*</exclude>
+                <exclude>**/asm*</exclude>
+                <exclude>**/annotations-api-3.0.jar</exclude>
+                <exclude>**/jython-nooro.jar</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

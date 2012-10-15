@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>base</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+     <relativePath>../..</relativePath>
+  </parent>
+  <artifactId>scripting</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId} OfBiz Component</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+
+<dependency>
+		<groupId>asm</groupId>
+		<artifactId>asm-analysis</artifactId>
+		<version>3.2</version>
+	</dependency>
+	<dependency>
+		<groupId>asm</groupId>
+		<artifactId>asm</artifactId>
+		<version>3.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.groovy</groupId>
+		<artifactId>groovy-all</artifactId>
+		<version>1.8.6</version>
+	</dependency>
+
+	<dependency>
+		<groupId>asm</groupId>
+		<artifactId>asm-util</artifactId>
+		<version>3.2</version>
+	</dependency>
+
+	<!-- no available in standard maven repository
+	<dependency>
+		<groupId>jython</groupId>
+		<artifactId>jython-nooro</artifactId>
+		<version>20121010-dps</version>
+	</dependency>
+	-->
+	<dependency>
+		<groupId>asm</groupId>
+		<artifactId>asm-tree</artifactId>
+		<version>3.2</version>
+	</dependency>
+	<dependency>
+		<groupId>antlr</groupId>
+		<artifactId>antlr</artifactId>
+		<version>2.7.6</version>
+	</dependency>
+	<dependency>
+		<groupId>bsf</groupId>
+		<artifactId>bsf</artifactId>
+		<version>2.4.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.janino</groupId>
+		<artifactId>janino</artifactId>
+		<version>2.5.15</version>
+	</dependency>
+	<!-- not available in official maven repository
+	<dependency>
+		<groupId>apache-oro</groupId>
+		<artifactId>jakarta-oro</artifactId>
+		<version>2.0.8</version>
+	</dependency>
+	-->
+
+	<dependency>
+		<groupId>org.fusesource.jansi</groupId>
+		<artifactId>jansi</artifactId>
+		<version>1.2.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>jline</groupId>
+		<artifactId>jline</artifactId>
+		<version>0.9.94</version>
+	</dependency>
+	<dependency>
+		<groupId>org.beanshell</groupId>
+		<artifactId>bsh</artifactId>
+		<version>2.0b4</version>
+	</dependency>
+
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+
+
+
+        <configuration>
+          <outputDirectory>./</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+
+          <!-- not accepts wildcards -->
+
+          
+          <artifactItems>
+
+		<!-- Ant dependency location:framework/base/lib/scripting/asm-analysis-3.2.jar-->
+		<artifactItem>
+			<groupId>asm</groupId>
+			<artifactId>asm-analysis</artifactId>
+			<version>3.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/asm-3.2.jar-->
+		<artifactItem>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>3.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/groovy-all-1.8.6.jar-->
+		<artifactItem>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>1.8.6</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/asm-util-3.2.jar-->
+
+		<artifactItem>
+			<groupId>asm</groupId>
+			<artifactId>asm-util</artifactId>
+			<version>3.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>base/lib/scripting/</outputDirectory>
+		</artifactItem>
+
+		<!-- Ant dependency location:framework/base/lib/scripting/jython-nooro.jar-->
+		<!-- not available in official repository
+		<artifactItem>
+			<groupId>jython-nooro</groupId>
+			<artifactId>jython-nooro</artifactId>
+			<version>20121010-dps</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/scripting/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/scripting/asm-tree-3.2.jar-->
+		<artifactItem>
+			<groupId>asm</groupId>
+			<artifactId>asm-tree</artifactId>
+			<version>3.2</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/antlr-2.7.6.jar-->
+		<artifactItem>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.6</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/bsf-2.4.0.jar-->
+		<artifactItem>
+			<groupId>bsf</groupId>
+			<artifactId>bsf</artifactId>
+			<version>2.4.0</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/janino-2.5.15.jar-->
+		<artifactItem>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>janino</artifactId>
+			<version>2.5.15</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/jakarta-oro-2.0.8.jar-->
+		<!-- not available in official maven repository
+		<artifactItem>
+			<groupId>apache-oro</groupId>
+			<artifactId>jakarta-oro</artifactId>
+			<version>2.0.8</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/scripting/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/scripting/jansi-1.2.1.jar-->
+		<artifactItem>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi</artifactId>
+			<version>1.2.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/jline-0.9.94.jar-->
+		<artifactItem>
+			<groupId>jline</groupId>
+			<artifactId>jline</artifactId>
+			<version>0.9.94</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/scripting/bsh-2.0b4.jar-->
+		<artifactItem>
+			<groupId>org.beanshell</groupId>
+			<artifactId>bsh</artifactId>
+			<version>2.0b4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>lib/scripting/</outputDirectory>
+		</artifactItem>
+
+          </artifactItems>
+
+
+
+
+        </configuration>
+
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>ant/*.jar</include>
+                <include>commons/*.jar</include>
+                <include>j2eespecs/*.jar</include>
+                <include>scripting/*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+                <exclude>**/bsf*</exclude>
+                <exclude>**/bsh*</exclude>
+                <exclude>**/asm*</exclude>
+                <exclude>**/annotations-api-3.0.jar</exclude>
+                <exclude>**/jython-nooro.jar</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

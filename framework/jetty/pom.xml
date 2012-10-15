@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>framework</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>jetty</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId} OfBiz Component</name>
+  <url>http://maven.apache.org</url>
+
+  
+   <repositories>
+    <repository>
+	<id>AntiSamy</id>
+	<name>AntiSamy</name>
+	<url>http://dist.wso2.org/maven2/</url>
+    </repository>
+    <repository>
+	<id>ForResolver</id>
+	<name>Resolver_id_of_artifact_needs_it</name>
+	<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads</url>
+    </repository>
+    <repository><id>parancoe-org-repository</id>
+	<name>Parancoe Repository for Maven</name>
+	<url>http://maven2.parancoe.org/repo</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>java-net-repository</id>
+	<name>java.net Repository for Maven</name>
+	<url>http://download.java.net/maven/2</url>
+	<layout>default</layout>
+    </repository>
+    <repository>
+	<id>modularity-releases</id>
+	<name>Modularity Releases Repository</name>
+	<url>http://m2.modularity.net.au/releases</url>
+	<releases>
+	  <enabled>true</enabled>
+	</releases>
+	<snapshots>
+	  <enabled>false</enabled>
+	  </snapshots>
+    </repository>
+    
+  </repositories>
+  
+  <dependencies>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-http</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>com.sun.el</artifactId>
+            <version>2.2.0.v201108011116</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>javax.servlet.jsp.jstl</artifactId>
+            <version>1.2.0.v201105211821</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-security</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-continuation</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-ajp</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>org.apache.taglibs.standard.glassfish</artifactId>
+            <version>1.2.0.v201112081803</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-xml</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-io</artifactId>
+            <version>8.1.2.v20120308</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>org.apache.jasper.glassfish</artifactId>
+            <version>2.2.2.v201112011158</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
+            <version>3.7.1</version>
+        </dependency>
+
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+
+
+
+        <configuration>
+          <outputDirectory>lib</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+
+          <!-- not accepts wildcards -->
+
+          <excludeArtifactIds>commons-*</excludeArtifactIds>
+          <excludeArtifactIds>geronimo-*</excludeArtifactIds>
+          <artifactItems>
+
+               <!-- Ant dependency location:framework/jetty/lib/jetty-util-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-util</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-webapp-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-webapp</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-http-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-http</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/com.sun.el-2.2.0.v201108011116.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty.orbit</groupId>
+                    <artifactId>com.sun.el</artifactId>
+                    <version>2.2.0.v201108011116</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-server-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-server</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/javax.servlet.jsp.jstl-1.2.0.v201105211821.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty.orbit</groupId>
+                    <artifactId>javax.servlet.jsp.jstl</artifactId>
+                    <version>1.2.0.v201105211821</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-security-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-security</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-continuation-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>jetty-continuation</groupId>
+                    <artifactId>jetty-continuation</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-servlet-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-servlet</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-ajp-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-ajp</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty.orbit</groupId>
+                    <artifactId>org.apache.taglibs.standard.glassfish</artifactId>
+                    <version>1.2.0.v201112081803</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-xml-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-xml</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/jetty-io-8.1.2.v20120308.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-io</artifactId>
+                    <version>8.1.2.v20120308</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/org.apache.jasper.glassfish-2.2.2.v201112011158.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty.orbit</groupId>
+                    <artifactId>org.apache.jasper.glassfish</artifactId>
+                    <version>2.2.2.v201112011158</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+                
+                <!-- Ant dependency location:framework/jetty/lib/org.eclipse.jdt.core-3.7.1.jar-->
+                <artifactItem>
+                    <groupId>org.eclipse.jetty.orbit</groupId>
+                    <artifactId>org.eclipse.jdt.core</artifactId>
+                    <version>3.7.1</version>
+                    <type>jar</type>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>framework/jetty/lib/</outputDirectory>
+                </artifactItem>
+
+
+          </artifactItems>
+
+
+
+
+        </configuration>
+
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>ant/*.jar</include>
+                <include>commons/*.jar</include>
+                <include>j2eespecs/*.jar</include>
+                <include>scripting/*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+                <exclude>**/bsf*</exclude>
+                <exclude>**/bsh*</exclude>
+                <exclude>**/asm*</exclude>
+                <exclude>**/annotations-api-3.0.jar</exclude>
+                <exclude>**/jython-nooro.jar</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

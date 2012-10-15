@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.ofbiz</groupId>
+    <artifactId>base</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+     <relativePath>../..</relativePath>
+  </parent>
+  <artifactId>ant</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId} OfBiz Component</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+
+	<dependency>
+		<groupId>org.apache.ant</groupId>
+		<artifactId>ant-nodeps</artifactId>
+		<version>1.8.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.ant</groupId>
+		<artifactId>ant-apache-bsf</artifactId>
+		<version>1.8.4</version>
+	</dependency>
+	<dependency>
+		<groupId>ant-contrib</groupId>
+		<artifactId>ant-contrib</artifactId>
+		<version>1.0b3</version>
+	</dependency>
+
+
+
+
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+
+
+
+        <configuration>
+          <outputDirectory>./</outputDirectory>
+          <excludeTransitive>true</excludeTransitive>
+
+          <!-- not accepts wildcards -->
+
+          
+          <artifactItems>
+		<!-- Ant dependency location:framework/base/lib/ant/ant-nodeps-1.8.1.jar-->
+		<artifactItem>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-nodeps</artifactId>
+			<version>1.8.1</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/ant/</outputDirectory>
+		</artifactItem>
+		-->
+		<!-- Ant dependency location:framework/base/lib/ant/ant-apache-bsf-1.8.4.jar-->
+		<artifactItem>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-apache-bsf</artifactId>
+			<version>1.8.4</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/ant/</outputDirectory>
+		</artifactItem>
+		<!-- Ant dependency location:framework/base/lib/ant/ant-contrib-1.0b3.jar-->
+		<artifactItem>
+			<groupId>ant-contrib</groupId>
+			<artifactId>ant-contrib</artifactId>
+			<version>1.0b3</version>
+			<type>jar</type>
+			<overWrite>true</overWrite>
+			<outputDirectory>framework/base/lib/ant/</outputDirectory>
+		</artifactItem>
+          </artifactItems>
+
+
+
+
+        </configuration>
+
+
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>lib</directory>
+              <includes>
+                <include>ant/*.jar</include>
+                <include>commons/*.jar</include>
+                <include>j2eespecs/*.jar</include>
+                <include>scripting/*.jar</include>
+              </includes>
+              <excludes>
+                <exclude>**/important.log</exclude>
+                <exclude>**/bsf*</exclude>
+                <exclude>**/bsh*</exclude>
+                <exclude>**/asm*</exclude>
+                <exclude>**/annotations-api-3.0.jar</exclude>
+                <exclude>**/jython-nooro.jar</exclude>
+              </excludes>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
