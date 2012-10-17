@@ -86,11 +86,13 @@
 		<artifactId>jline</artifactId>
 		<version>0.9.94</version>
 	</dependency>
+        <!-- probably conflicted
 	<dependency>
 		<groupId>org.beanshell</groupId>
 		<artifactId>bsh</artifactId>
 		<version>2.0b4</version>
 	</dependency>
+        -->
 
 
   </dependencies>
